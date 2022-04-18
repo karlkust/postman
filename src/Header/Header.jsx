@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
+import IconIn from "../icon/IconIn";
+import IconLogin from "../icon/IconLogin";
 
 const Header = ({ modalActivity, setModalActivity }) => {
   const clickHandler = (e) => {
@@ -12,10 +14,14 @@ const Header = ({ modalActivity, setModalActivity }) => {
       <h1 className="name">POSTS</h1>
       <nav style={{ display: "flex", gap: "10px" }}>
         <Link to="/login" onClick={clickHandler}>
-          <button className="btnIn">Войти</button>
+          <IconIn />
+          <br />
+          Вход
         </Link>
         <Link to="/signup" onClick={clickHandler}>
-          <button className="btnIn">Зарегистрироваться</button>
+          <IconLogin />
+          <br />
+          Регистрация
         </Link>
       </nav>
     </div>
