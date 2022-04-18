@@ -9,3 +9,11 @@
 .name {
     font-size: 60px;
 }
+
+.btnIn {
+    border-radius: 10px;
+    border-color: black;
+    padding: 10px;
+    cursor: pointer;
+    background: #8e7aff;
+}
