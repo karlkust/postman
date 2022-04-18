@@ -1,0 +1,14 @@
+.btn {
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid #cfd8dc;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn.yellow {
+    background-color: #8e7aff;
+    border-color: #8e7aff;
+}

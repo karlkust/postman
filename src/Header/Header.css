@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 30px;
+    font-family: sans-serif;
+}
+
+.name {
+    font-size: 60px;
+}
