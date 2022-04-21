@@ -1,9 +1,0 @@
-.card {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.card-subtitle {
-    margin-bottom: 2; 
-}
