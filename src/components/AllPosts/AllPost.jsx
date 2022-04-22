@@ -23,33 +23,31 @@ const AllPost = () => {
     <div className="card">
       {!posts.err &&
         posts.map((p, i) => (
-          <>
-            <div className="card-body">
-              <h4 className="card-title" key={i}>
-                ИМЯ ПОЛЬЗОВАТЕЛЯ
-              </h4>
-              <h6 className="card-id">{p._id}</h6>
-              <h6 className="card-created" key={i}>
-                {p.created_at}
-              </h6>
-
-              <h6 className="card-subtitle mb-2 text-muted">{p.title}</h6>
-
-              <p className="card-text" key={i}>
-                {p.text}
-              </p>
-              <img className="card-img" src={p.image} key={i} alt="img" />
-              <a href="/" className="card-link">
-                Редактировать пост
-              </a>
-
-              <a href="/" className="card-link">
-                Удалить пост
-              </a>
+          <div className="all-card">
+            <div className="card-header">
+              <div className="author_info" key={i}>
+                <img className="avatar" src={p.author.avatar} alt="avatar" />
+                <div className="nickname">{p.author.name}</div>
+                <div className="about">{p.author.about}</div>
+              </div>
             </div>
 
-            {/* <div className="card-comments">комментарии</div> */}
-          </>
+            <div className="card-content" key={i}>
+              <img
+                className="authors-pic"
+                src={p.image}
+                alt="Ваше изображение"
+              />
+            </div>
+
+            <a href="/" className="card-link">
+              Редактировать пост
+            </a>
+
+            <a href="/" className="card-link">
+              Удалить пост
+            </a>
+          </div>
         ))}
     </div>
   );
