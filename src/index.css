@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('../public/img/paper bg3.jpg');
+  background: url('../public/img/paperGreen.jpg');
+  background-size: contain;
 }
 
 code {

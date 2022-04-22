@@ -17,7 +17,8 @@
 }
 
 .modal__container {
-    background-color: #fff;
+    background: url('/public/img/paper bg3.jpg');
+    background-size: cover;
     padding: 32px;
     box-sizing: border-box;
     width: 320px;

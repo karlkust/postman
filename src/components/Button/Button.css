@@ -9,6 +9,7 @@
 }
 
 .btn.yellow {
-    background-color: #8e7aff;
-    border-color: none
+    background: url('/public/img/paperCard.jpg');
+    border-color: none;
+    background-size: cover;
 }

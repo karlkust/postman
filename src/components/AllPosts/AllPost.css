@@ -1,0 +1,27 @@
+.card {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+    margin: 25px;
+	
+}
+.card-body {
+	box-shadow: 0 0 5px 0 #0006;
+	border-radius: 20px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	text-align: center;
+	background: url('/public/img/paperCard.jpg') transparent;
+	background-size: cover;
+	
+}
+
+.card-img {
+	display: flex;
+	align-self: center;
+	max-height: 200px;
+	max-width: 400px;
+	box-shadow: 0 0 10px 0 #0006;
+}

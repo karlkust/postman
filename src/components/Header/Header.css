@@ -8,5 +8,8 @@
 }
 
 .name {
+    color: white;
+    opacity: 0.8;
     font-size: 60px;
 }
+

@@ -11,10 +11,10 @@ const Header = ({ modalActivity, setModalActivity }) => {
     <div className="header">
       <h1 className="name">POSTS</h1>
       <nav style={{ display: "flex", gap: "10px" }}>
-        <Link to="/login" onClick={clickHandler}>
+        <Link className="inText" to="/login" onClick={clickHandler}>
           Вход
         </Link>
-        <Link to="/signup" onClick={clickHandler}>
+        <Link className="logText" to="/signup" onClick={clickHandler}>
           Регистрация
         </Link>
       </nav>
