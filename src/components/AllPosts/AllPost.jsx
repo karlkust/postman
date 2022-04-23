@@ -9,7 +9,7 @@ const AllPost = () => {
     fetch("https://api.react-learning.ru/posts", {
       headers: {
         authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU1YTVmNTk0N2M3MjkyZDhjMjA0ZTkiLCJpYXQiOjE2NDk3ODAyMTksImV4cCI6MTY4MTMxNjIxOX0.rKMiNAcYsxkJAPdbjlYJ-py6VY0Ko4S6WDB7_rZBbUU",
+          ,
       },
     })
       .then((res) => res.json())
@@ -26,7 +26,9 @@ const AllPost = () => {
           <div className="all-card">
             <div className="card-header">
               <div className="author_info" key={i}>
-                <img className="avatar" src={p.author.avatar} alt="avatar" />
+                {p.author.avatar && (
+                  <img className="avatar" src={p.author.avatar} alt="avatar" />
+                )}
                 <div className="nickname">{p.author.name}</div>
                 <div className="about">{p.author.about}</div>
               </div>

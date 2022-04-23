@@ -9,7 +9,7 @@ const Header = ({ modalActivity, setModalActivity }) => {
 
   return (
     <div className="header">
-      <h1 className="name">POSTS</h1>
+      <h1 className="name">Ten O'Clock Postman</h1>
 
       <nav
         style={{

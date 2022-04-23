@@ -2,8 +2,8 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
-    margin: 25px;
-	
+    /* margin: 25px; */
+	margin: 155px;
 	
 }
 .all-card {
@@ -43,7 +43,7 @@
 
 .authors-pic {
 	display: flex;
-	align-self: center;
+	align-items: center;
 	max-height: 200px;
 	max-width: 400px;
 	box-shadow: 0 0 10px 0 #0006;
