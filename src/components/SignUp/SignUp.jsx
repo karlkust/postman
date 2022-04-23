@@ -31,6 +31,14 @@ const SignUp = (props) => {
                       placeholder="Введите e-mail"
                     />
                   </div>
+                  <div className="mb-3">
+                    <input
+                      name="password"
+                      type="password"
+                      placeholder="Придумайте пароль"
+                      className="form-control"
+                    />
+                  </div>
                 </form>
 
                 <Button text="Зарегистрироваться" type="yellow" />

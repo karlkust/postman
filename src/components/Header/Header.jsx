@@ -1,14 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-
-const Header = ({ modalActivity, setModalActivity }) => {
+import CreatePost from "../Button/CreatePost";
+const Header = ({
+  modalActivity,
+  setModalActivity,
+  modalActivityIn,
+  setModalActivityIn,
+}) => {
   const clickHandler = (e) => {
     setModalActivity(!modalActivity);
   };
 
+  const clickHandlerIn = (e) => {
+    setModalActivityIn(!modalActivityIn);
+  };
+
   return (
     <div className="header">
+      <CreatePost />
       <h1 className="name">Ten O'Clock Postman</h1>
 
       <nav
@@ -17,7 +27,7 @@ const Header = ({ modalActivity, setModalActivity }) => {
           gap: "10px",
         }}
       >
-        <Link to="/login" onClick={clickHandler}>
+        <Link to="/login" onClick={clickHandlerIn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="36"

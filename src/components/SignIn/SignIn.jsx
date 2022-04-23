@@ -4,7 +4,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 const SignIn = (props) => {
   return (
-    <div className={props.active ? "modal active" : "modal"}>
+    <div className={props.activeIn ? "modal active" : "modal"}>
       <div className="modal__container">
         <Routes>
           <Route
@@ -12,6 +12,24 @@ const SignIn = (props) => {
             element={
               <>
                 <h2>Войти</h2>
+                <form>
+                  <div className="mb-3">
+                    <input
+                      name="email"
+                      type="email"
+                      className="form-control"
+                      placeholder="Введите e-mail"
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <input
+                      name="password"
+                      type="password"
+                      placeholder="Введите пароль"
+                      className="form-control"
+                    />
+                  </div>
+                </form>
                 <Button text="Войти" type="yellow" />
                 <Link to="/signup">
                   <Button text="Регистрация" />
@@ -23,7 +41,7 @@ const SignIn = (props) => {
         <div
           className="modal__close"
           onClick={(e) => {
-            props.changeActive(!props.active);
+            props.changeActiveIn(!props.activeIn);
           }}
         >
           <svg

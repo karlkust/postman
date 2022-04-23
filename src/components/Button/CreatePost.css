@@ -1,0 +1,19 @@
+.btn-create-post {
+    border-radius: 15px;
+    background: url('/public/img/paper bg3.jpg');
+    background-size: cover;
+    padding: 10px 55px 10px 55px;
+    font-size: large;
+    border: none;
+}
+
+.btn-create-post:hover{
+    background: url('/public/img/paperCard.jpg');
+    background-size: cover;
+}
+
+/* .bi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */

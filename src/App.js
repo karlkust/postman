@@ -7,23 +7,26 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from './components/SignUp/SignUp';
 import Footer from './components/Footer/Footer';
 
+
 function App() {
   
   const [modalActivity, setModalActivity] = useState(false);
-
+  const [modalActivityIn, setModalActivityIn] = useState(false);
   
 
   return (
     <>
       <Header
         modalActivity={modalActivity}
-        setModalActivity={setModalActivity} />
-      
+        setModalActivity={setModalActivity} 
+        
+        modalActivityIn={modalActivityIn}
+        setModalActivityIn={setModalActivityIn} />
       <AllPost />
       <Footer />
       <SignIn
-        active={modalActivity}
-        changeActive={setModalActivity} />
+        activeIn={modalActivityIn}
+        changeActiveIn={setModalActivityIn} />
       <SignUp 
         active={modalActivity}
         changeActive={setModalActivity} />
