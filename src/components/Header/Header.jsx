@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import CreatePost from "../Button/CreatePost";
+
 const Header = ({
   modalActivity,
   setModalActivity,
   modalActivityIn,
   setModalActivityIn,
+  changeCreateModal,
+  postModalActive,
 }) => {
   const clickHandler = (e) => {
     setModalActivity(!modalActivity);
@@ -16,9 +19,16 @@ const Header = ({
     setModalActivityIn(!modalActivityIn);
   };
 
+  const clickHandlerCreatePost = (e) => {
+    postModalActive(!changeCreateModal);
+  };
+
   return (
     <div className="header">
-      <CreatePost />
+      <Link to="/create" onClick={clickHandlerCreatePost}>
+        <CreatePost />
+      </Link>
+
       <h1 className="name">Ten O'Clock Postman</h1>
 
       <nav
