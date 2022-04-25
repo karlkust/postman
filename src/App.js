@@ -12,15 +12,11 @@ function App() {
   
   const [modalActivity, setModalActivity] = useState(false);
   const [modalActivityIn, setModalActivityIn] = useState(false);
-  const [postModalActive, changeCreateModal] = useState(false);
   
 
   return (
     <>
       <Header
-        postModalActive={postModalActive}
-        changeCreateModal={changeCreateModal}
-        
         modalActivity={modalActivity}
         setModalActivity={setModalActivity} 
         
@@ -30,11 +26,7 @@ function App() {
         />
       
       <AllPost />
-      
-
-      <CreatePostModal
-      activeCreate={postModalActive}
-      changeActiveCreate={changeCreateModal} />
+      <CreatePostModal />
 
       <SignIn
         activeIn={modalActivityIn}

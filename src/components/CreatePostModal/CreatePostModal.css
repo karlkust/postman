@@ -1,0 +1,67 @@
+.post__popup {
+    display: grid;
+    grid-template-columns: repeat(30px, 1fr);
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    background: url('/public/img/paperGreen.jpg');
+    background-size: cover;
+    padding: 32px;
+    box-sizing: border-box;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px rgba(40, 41, 61, 0.08), 0px 20px 32px rgba(96, 97, 112, 0.24);
+    position: relative;
+    left: -280px;
+    transition: left 1s;
+
+}
+
+.post__popup:hover {
+    left: 0;
+}
+
+input {
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    background: url('/public/img/paper bg3.jpg');
+    background-size: cover;
+}
+
+textarea {
+    border-radius: 10px;
+    width: 200px;
+    height: 90px;
+    padding: 5px;
+    background: url('/public/img/paper bg3.jpg');
+    background-size: cover;
+}
+
+.create-btn {
+    height: 40px;
+    width: 100px;
+    padding: 0 20px;
+    border-radius: 10px;
+    border: 1px solid #cfd8dc;
+    background: url('/public/img/paper bg3.jpg');
+    background-size: cover;
+    cursor: pointer;
+    border: none;
+}
+
+.create-btn:hover {
+    background: url('/public/img/paperCard.jpg');
+    background-size: cover;
+}
+
+.title-create-post {
+    grid-row: 1 / 4;
+    width: 200px;
+    text-align: center;
+    transform: rotate(90deg);
+    transform-origin: 40px 250px;
+    font-size: 20px;
+    height: 30px;
+}

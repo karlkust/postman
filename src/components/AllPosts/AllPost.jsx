@@ -14,7 +14,6 @@ const AllPost = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         getPosts(data);
       });
   }, []);
@@ -23,7 +22,7 @@ const AllPost = () => {
     <div className="card">
       {!posts.err &&
         posts.map((p, i) => (
-          <div className="all-card">
+          <div className="all-card" key={i}>
             <div className="card-header">
               <div className="author_info" key={i}>
                 {p.author.avatar && (
