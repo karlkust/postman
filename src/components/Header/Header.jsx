@@ -7,8 +7,6 @@ const Header = ({
   setModalActivity,
   modalActivityIn,
   setModalActivityIn,
-  changeCreateModal,
-  postModalActive,
 }) => {
   const clickHandler = (e) => {
     setModalActivity(!modalActivity);
@@ -18,9 +16,27 @@ const Header = ({
     setModalActivityIn(!modalActivityIn);
   };
 
+  //ПРОСЬБА ВОЙТИ ИЛИ ЗАРЕГИСТРИРОВАТЬСЯ:
+
+  // let nameEl = document.querySelector("h2>span");
+
+  // let name = localStorage.getItem("name");
+  // if (name) {
+  //   nameEl.innerText = name;
+  // } else {
+  //   name = alert("Пожалуйста, войдите, или зарегистрируйтесь!", "");
+  //   if (name) {
+  //     nameEl.innerText = name;
+  //     localStorage.setItem("name", name);
+  //   }
+  // }
+
   return (
     <div className="header">
       <h1 className="name">Ten O'Clock Postman</h1>
+      <h2 className="guestsName">
+        <span>Гость</span>
+      </h2>
 
       <nav
         style={{

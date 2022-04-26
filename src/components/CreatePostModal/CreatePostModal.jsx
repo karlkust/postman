@@ -77,18 +77,23 @@ const CreatePostModal = () => {
     return <AllPost />;
   }
 
-  fetch(requests.getAllPosts)
-    .then(function (ans) {
-      return ans.json();
-    })
-    .then(function (data) {
-      let arr = data.data;
-      arr.forEach(function (el) {
-        block.innerHTML += setCard(el);
-      });
-    });
+  // let posts = localStorage.getItem("posts");
+  // if (posts) {
+  // } else {
+  //   fetch(requests.getAllPosts)
+  //     .then(function (ans) {
+  //       return ans.json();
+  //     })
+  //     .then(function (data) {
+  //       let arr = data.data;
+  //       localStorage.setItem("posts", JSON.stringify(arr));
+  //       arr.forEach(function (el) {
+  //         block.innerHTML += setCard(el);
+  //       });
+  //     });
+  // }
 
-  function sendPost(body) {
+  function sendPost(body, form, cb) {
     fetch(requests.addOnePost, {
       method: "post",
       headers: {
@@ -100,7 +105,15 @@ const CreatePostModal = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        if (data.message === "ok") {
+          cb(body, form);
+        }
       });
+  }
+
+  function doAfterAdd(obj, form) {
+    block.innerHTML += setCard(obj);
+    form.reset();
   }
 
   let form = document.forms.addPost;
@@ -116,7 +129,7 @@ const CreatePostModal = () => {
       }
     }
     console.log(body);
-    sendPost(body);
+    sendPost(body, form, doAfterAdd);
   });
 
   return (

@@ -24,9 +24,9 @@ function App() {
         setModalActivityIn={setModalActivityIn} 
         
         />
-      
-      <AllPost />
       <CreatePostModal />
+      <AllPost />
+
 
       <SignIn
         activeIn={modalActivityIn}

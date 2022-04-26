@@ -8,7 +8,8 @@ const AllPost = () => {
   useEffect(() => {
     fetch("https://api.react-learning.ru/posts", {
       headers: {
-        authorization: "",
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU1YTVmNTk0N2M3MjkyZDhjMjA0ZTkiLCJpYXQiOjE2NDk3ODAyMTksImV4cCI6MTY4MTMxNjIxOX0.rKMiNAcYsxkJAPdbjlYJ-py6VY0Ko4S6WDB7_rZBbUU",
       },
     })
       .then((res) => res.json())
@@ -21,7 +22,7 @@ const AllPost = () => {
     <div className="card">
       {!posts.err &&
         posts.map((p, i) => (
-          <div className="all-card" key={i}>
+          <div className="all-card" key={i} id="${p._id}">
             <div className="card-header">
               <div className="author_info" key={i}>
                 {p.author.avatar && (
@@ -31,7 +32,7 @@ const AllPost = () => {
                 <div className="about">{p.author.about}</div>
               </div>
             </div>
-
+            <hr />
             <div className="card-content" key={i}>
               <img
                 className="authors-pic"
@@ -67,11 +68,11 @@ const AllPost = () => {
             </div>
 
             <a href="/" className="card-link">
-              Редактировать пост
+              Редактировать POST
             </a>
 
             <a href="/" className="card-link">
-              Удалить пост
+              Удалить POST
             </a>
           </div>
         ))}
