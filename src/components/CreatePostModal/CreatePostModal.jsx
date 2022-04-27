@@ -71,11 +71,11 @@ const CreatePostModal = () => {
     deleteOnePost: "https://api.react-learning.ru/posts/:postId",
   };
 
-  let block = document.querySelector(".container");
+  // let block = document.querySelector(".container");
 
-  function setCard(obj) {
-    return <AllPost />;
-  }
+  // function setCard(obj) {
+  //   return <AllPost />;
+  // }
 
   // let posts = localStorage.getItem("posts");
   // if (posts) {
@@ -93,44 +93,44 @@ const CreatePostModal = () => {
   //     });
   // }
 
-  function sendPost(body, form, cb) {
-    fetch(requests.addOnePost, {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(body),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        if (data.message === "ok") {
-          cb(body, form);
-        }
-      });
-  }
+  // function sendPost(body, form, cb) {
+  //   fetch(requests.addOnePost, {
+  //     method: "post",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(body),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.message === "ok") {
+  //         cb(body, form);
+  //       }
+  //     });
+  // }
 
-  function doAfterAdd(obj, form) {
-    block.innerHTML += setCard(obj);
-    form.reset();
-  }
+  // // function doAfterAdd(obj, form) {
+  // //   block.innerHTML += setCard(obj);
+  // //   form.reset();
+  // // }
 
-  let form = document.forms.addPost;
+  // let form = document.forms.addPost;
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  // form.addEventListener("submit", function (e) {
+  //   e.preventDefault();
+  //   console.log(form.elements);
 
-    let body = {};
-    for (let i = 0; i < form.elements.length; i++) {
-      let el = form.elements[i];
-      if (el.name) {
-        body[el.name] = el.value;
-      }
-    }
-    console.log(body);
-    sendPost(body, form, doAfterAdd);
-  });
+  //   let body = {};
+  //   for (let i = 0; i < form.elements.length; i++) {
+  //     let el = form.elements[i];
+  //     if (el.name) {
+  //       body[el.name] = el.value;
+  //     }
+  //   }
+  //   sendPost(body, form);
+  // });
 
   return (
     <>

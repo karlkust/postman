@@ -1,34 +1,37 @@
 import React from "react";
 import "./AllPost.css";
 import { useEffect, useState } from "react";
+import api from "../../Api";
+import { Link } from "react-router-dom";
+// import OnePost from "../OnePost/OnePost";
 
 const AllPost = () => {
   const [posts, getPosts] = useState([{}]);
-
+  // const [users, getUsers] = useState([{}]);
   useEffect(() => {
-    fetch("https://api.react-learning.ru/posts", {
-      headers: {
-        authorization: "",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        getPosts(data);
-      });
+    api.getPosts().then((data) => {
+      getPosts(data);
+    });
   }, []);
+
+  // useEffect(() => {
+  //   api.getUsers().then((data) => {
+  //     getUsers(data);
+  //   });
+  // }, []);
 
   return (
     <div className="card">
       {!posts.err &&
         posts.map((p, i) => (
-          <div className="all-card" key={i} id="${p._id}">
+          <div className="all-card" key={i}>
             <div className="card-header">
               <div className="author_info" key={i}>
-                {p.author.avatar && (
+                {p.author && (
                   <img className="avatar" src={p.author.avatar} alt="avatar" />
                 )}
-                <div className="nickname">{p.author.name}</div>
-                <div className="about">{p.author.about}</div>
+                {p.author && <div className="nickname">{p.author.name}</div>}
+                {p.author && <div className="about">{p.author.about}</div>}
               </div>
             </div>
             <hr />
@@ -76,6 +79,15 @@ const AllPost = () => {
           </div>
         ))}
     </div>
+
+    // <div className="all-posts">
+    //   {!posts.err &&
+    //     posts.map((p, i) => (
+    //       <Link to={"/posts/" + p._id} key={p._id}>
+    //         <OnePost {...p} key={p._id} />
+    //       </Link>
+    //     ))}
+    // </div>
   );
 };
 
