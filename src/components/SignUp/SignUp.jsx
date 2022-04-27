@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button/Button";
 import { Routes, Route } from "react-router-dom";
 import "../Modal/Modal.css";
+import api from "../../Api";
 
 const SignUp = (props) => {
+  const [signUp, postSignUp] = useState();
+
+  useEffect(() => {
+    api.postSignUp().then((data) => {
+      postSignUp(data);
+    });
+  }, []);
+
   return (
     <div className={props.active ? "modal active" : "modal"}>
       <div className="modal__container">

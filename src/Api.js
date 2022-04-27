@@ -43,7 +43,21 @@ class Api {
             }
         }).then(responseHandler);
     }
+    postSignUp() {
+    return fetch(`${this.path}/signup`, {
+          method: 'POST',
+          headers: {
+            authorization: `Bearer ${this.token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            email: '',
+            password: ''
+          })
+        });
+    }
 }
+
 
 const config = {
     path: 'https://api.react-learning.ru',

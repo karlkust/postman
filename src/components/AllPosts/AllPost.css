@@ -53,13 +53,32 @@
 	margin: 2px;
 }
 
+.card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
 .likes {
 	margin: 25px;
 	display: flex;
 	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+	background: url('/public/img/paper bg3.jpg');
+	background-size: cover;
+	border-radius: 10px;
+	padding: 5px;
+	border: none;
+	box-shadow: 0 0 5px 0 #0006;
 }
 
-.bi-box2-heart:hover {
-	fill: rgb(0, 159, 212);
+.likes:hover {
+	background: url('/public/img/paperCard.jpg');
+	background-size: cover;
 }
 
+.likes-count {
+	font-size: 20px;
+	margin: 5px;
+}
