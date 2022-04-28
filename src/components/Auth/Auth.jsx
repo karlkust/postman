@@ -7,6 +7,7 @@ import { UserCtx } from "../Context/UserContext";
 const Auth = ({ login }) => {
   const [val, changeVal] = useState("");
   const [pwd, changePwd] = useState("");
+  // const [name, changeName] = useState("");
 
   const { setUser, setToken } = useContext(UserCtx);
   const navigation = useNavigate();
@@ -36,6 +37,16 @@ const Auth = ({ login }) => {
     <div className="auth-container">
       <form className="auth" onSubmit={handler}>
         <h1>{login ? "Вход" : "Регистрация"}</h1>
+
+        {/* <input
+          type="name"
+          placeholder="name"
+          name="name"
+          className="in-reg"
+          value={name}
+          required
+          onInput={(e) => changeName(e.target.value)}
+        /> */}
 
         <input
           type="email"

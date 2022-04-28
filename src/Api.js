@@ -76,10 +76,20 @@ class Api {
         return fetch(`${this.path}/posts`, {
             method: "post",
             headers: {
+                authorization: `Bearer ${this.token}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(newPost)
         }).then(responseHandler);
+    }
+    getUser() {
+        return fetch(`${this.path}/users/:userId`, {
+            method: 'get',
+            headers: {
+                authorization: `Bearer ${this.token}`,
+                
+            },
+        }).then(responseHandler)
     }
 }
 
