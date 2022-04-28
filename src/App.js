@@ -2,40 +2,38 @@ import React, { useState} from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 // import Modal from './components/Modal/Modal';
-import AllPost from './components/AllPosts/AllPost';
-import SignIn from './components/SignIn/SignIn';
-import SignUp from './components/SignUp/SignUp';
 import Footer from './components/Footer/Footer';
 import CreatePostModal from './components/CreatePostModal/CreatePostModal';
+import { UserCtx } from './components/Context/UserContext';
+import Main from './components/Main/Main';
+
 
 function App() {
-  
-  const [modalActivity, setModalActivity] = useState(false);
-  const [modalActivityIn, setModalActivityIn] = useState(false);
-  
 
+  const [user, setUser] = useState(localStorage.getItem("user") || "");
+
+    const userHandler = (id) => {
+        setUser(id);
+        localStorage.setItem("user", id);
+    }
+    const [token, setToken] = useState(localStorage.getItem("token") || "");
+
+    const tokenHandler = (data) => {
+        setToken(data);
+        localStorage.setItem("token", data);
+    }
   return (
     <>
-      <Header
-        modalActivity={modalActivity}
-        setModalActivity={setModalActivity} 
-        
-        modalActivityIn={modalActivityIn}
-        setModalActivityIn={setModalActivityIn} 
-        
-        />
-      <CreatePostModal />
-      <AllPost />
 
-
-      <SignIn
-        activeIn={modalActivityIn}
-        changeActiveIn={setModalActivityIn} />
-      <SignUp 
-        active={modalActivity}
-        changeActive={setModalActivity} />
-      <Footer />
-    </>    
+    <UserCtx.Provider value={{token: token, user: user, setToken: tokenHandler, setUser: userHandler }}>
+      <div className='container'>
+        <Header />
+        <CreatePostModal />
+        <Main />
+        <Footer />
+      </div>
+      </UserCtx.Provider>
+    </> 
   );
 }
 

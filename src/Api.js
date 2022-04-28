@@ -9,59 +9,84 @@ class Api {
     }
     
     getPosts() {
-        return fetch(`${this.path}/posts/`, {
+        return fetch(`${this.path}/posts`, {
+            method: 'GET',
             headers: {
                 authorization: `Bearer ${this.token}`
             }
         }).then(responseHandler);
     }
     getPost() {
-        return fetch(`${this.path}/posts/:id/`, {
+        return fetch(`${this.path}/posts/:id`, {
+            method: 'GET',
             headers: {
-                authorization: `Bearer ${this.token}`
-            }
+                authorization: `Bearer ${this.token}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify()
         }).then(responseHandler);
     }
     postPost() {
-        return fetch(`${this.path}/posts/`, {
+        return fetch(`${this.path}/posts`, {
             headers: {
                 authorization: `Bearer ${this.token}`
             }
         }).then(responseHandler);
     }
-    postSignIn() {
-        return fetch(`${this.path}/signin/`, {
-            headers: {
-                authorization: `Bearer ${this.token}`
-            }
-        }).then(responseHandler);
-    }
-    postUsers() {
+    
+    getUsers() {
         return fetch(`${this.path}/users/`, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${this.token}`,
+            }
+        }).then(responseHandler);
+    }
+    
+    getAllComments() {
+        return fetch(`${this.path}/posts/comments/`, {
+            method: 'GET',
             headers: {
                 authorization: `Bearer ${this.token}`
             }
         }).then(responseHandler);
     }
-    postSignUp() {
-    return fetch(`${this.path}/signup`, {
-          method: 'POST',
-          headers: {
-            authorization: `Bearer ${this.token}`,
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            email: '',
-            password: ''
-          })
-        });
+
+    signup(body) {
+        return fetch(`${this.path}/signup`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
+
+    login(body) {
+        return fetch(`${this.path}/signin`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(body)
+        }).then(responseHandler);
+    }
+
+    addPost(newPost) {
+        return fetch(`${this.path}/posts`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newPost)
+        }).then(responseHandler);
     }
 }
 
 
 const config = {
     path: 'https://api.react-learning.ru',
-    token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjJmOTk5MmFlNWM0MGMxMGMxMWRmZTQiLCJpYXQiOjE2NDcyODY2ODEsImV4cCI6MTY3ODgyMjY4MX0.WHKXAErKZtY445yXecOFZsx981MuXicJti-okSY-tac'
+    token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjZhYWNlNzI2YzBiNzI5MDY1OGU2YWIiLCJpYXQiOjE2NTExNjQ2MTYsImV4cCI6MTY4MjcwMDYxNn0.61ANfGgvjUzSFNJu5DUHhsZK2BOimXWaHlC15s157_Q"
 }
 
 const api = new Api(config);

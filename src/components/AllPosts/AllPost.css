@@ -1,9 +1,10 @@
 .card {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 30px;
+	grid-template-columns: repeat(1, 1000px);
+	gap: 10px;
     /* margin: 25px; */
-	margin: 155px;
+	margin-left: 25%;
+	margin-top: 150px;
 	
 }
 .all-card {
@@ -43,6 +44,7 @@
 	max-width: 400px;
 	box-shadow: 0 0 10px 0 #0006;
 	margin: 15px;
+	border-radius: 8px;
 }
 
 .tag {
@@ -81,4 +83,15 @@
 .likes-count {
 	font-size: 20px;
 	margin: 5px;
+}
+
+.card-content {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.card-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

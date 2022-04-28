@@ -27,6 +27,7 @@ input {
     padding: 5px;
     background: url('/public/img/paper bg3.jpg');
     background-size: cover;
+    border: none;
 }
 
 textarea {
