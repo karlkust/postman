@@ -5,7 +5,6 @@ import api from "../../Api";
 
 const AllPost = () => {
   const [posts, getPosts] = useState([{}]);
-  const [likesCount, updateLikesCount] = useState(0);
   const postsRev = posts.reverse();
 
   useEffect(() => {
@@ -68,13 +67,13 @@ const AllPost = () => {
               <Comments />
             </div> */}
 
-            <a href="/" className="card-link">
+            {/* <a href="/" className="card-link">
               Редактировать POST
             </a>
 
             <a href="/" className="card-link">
               Удалить POST
-            </a>
+            </a> */}
           </div>
         ))}
     </div>

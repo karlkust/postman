@@ -7,7 +7,8 @@ import { UserCtx } from "../Context/UserContext";
 const Auth = ({ login }) => {
   const [val, changeVal] = useState("");
   const [pwd, changePwd] = useState("");
-  // const [name, changeName] = useState("");
+  // const [ava, changeAva] = useState("");
+  // const [nme, changeNme] = useState("");
 
   const { setUser, setToken } = useContext(UserCtx);
   const navigation = useNavigate();
@@ -21,12 +22,12 @@ const Auth = ({ login }) => {
           setUser(ans.data._id);
           setToken(ans.token);
         }
+        alert(`Привет, ${ans.data.name}`);
         navigation("/");
       });
     } else {
       console.log(val);
       api.signup({ email: val, password: pwd }).then((ans) => {
-        console.log(ans);
         if (ans._id || ans.err.statusCode === 409) {
           navigation("/signin");
         }
@@ -39,13 +40,23 @@ const Auth = ({ login }) => {
         <h1>{login ? "Вход" : "Регистрация"}</h1>
 
         {/* <input
-          type="name"
+          type="text"
           placeholder="name"
           name="name"
           className="in-reg"
-          value={name}
+          value={nme}
           required
-          onInput={(e) => changeName(e.target.value)}
+          onInput={(e) => changeNme(e.target.value)}
+        /> */}
+
+        {/* <input
+          type="url"
+          placeholder="avatar"
+          name="avatar"
+          className="in-reg"
+          value={ava}
+          required
+          onInput={(e) => changeAva(e.target.value)}
         /> */}
 
         <input

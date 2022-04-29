@@ -16,7 +16,7 @@ class Api {
             }
         }).then(responseHandler);
     }
-    getPost() {
+    getSinglePost() {
         return fetch(`${this.path}/posts/:id`, {
             method: 'GET',
             headers: {

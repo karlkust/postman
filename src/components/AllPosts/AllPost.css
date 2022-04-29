@@ -95,3 +95,8 @@
 	flex-direction: column;
 	justify-content: center;
 }
+
+.header__scrolled {
+    background-color: white;
+    box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
+}

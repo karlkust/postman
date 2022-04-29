@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { UserCtx } from "../Context/UserContext";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import Auth from "../Auth/Auth.jsx";
 
-const Header = () => {
+const Header = (props) => {
   const { user } = useContext(UserCtx);
+  const [userName, getUserName] = useState();
+
   return (
     <div className="header">
       <h1 className="name">Ten O'Clock Postman</h1>
-      <h2 className="guestsName">
-        <span>Гость</span>
-      </h2>
 
       <nav>
         <Link to={user ? "/signup" : "/signin"}>

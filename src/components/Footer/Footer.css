@@ -1,0 +1,9 @@
+footer {
+    padding: 40px calc(40% - 500px);
+    display: flex;
+    justify-content: space-between;
+}
+
+img.vk {
+    height: 30px;
+}
