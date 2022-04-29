@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import PostPage from "../../Pages/PostPage";
+import UserSinglePage from "../UserSinglePage/UserSinglePage";
 import Signin from "../../Pages/Signin";
 import Signup from "../../Pages/Signup";
 import AllPost from "../AllPosts/AllPost.jsx";
@@ -10,7 +10,7 @@ const Main = () => {
     <main>
       <Routes>
         <Route path="/" element={<AllPost />} />
-        <Route path="/posts/:id" element={<PostPage />} />
+        <Route path="/usersinglepage" element={<UserSinglePage />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>

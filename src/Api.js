@@ -91,6 +91,16 @@ class Api {
             },
         }).then(responseHandler)
     }
+
+    getPersonalCard() {
+        return fetch(`${this.path}/users/me`, {
+            method: 'get',
+            headers: {
+                authorization: `Bearer ${this.token}`,  
+                "Content-Type": "application/json"
+            },
+        }).then(responseHandler)
+    }
 }
 
 

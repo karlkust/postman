@@ -3,8 +3,10 @@ import { createContext } from "react";
 export const UserCtx = createContext({
     token: "",
     user: "",
+    avatar: "",
     setToken: () => {},
-    setUser: () => {}
+    setUser: () => {},
+    setAvatar: () => {},
 });
 
 export const UserValue = {
