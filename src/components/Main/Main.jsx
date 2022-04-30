@@ -4,6 +4,7 @@ import UserSinglePage from "../UserSinglePage/UserSinglePage";
 import Signin from "../../Pages/Signin";
 import Signup from "../../Pages/Signup";
 import AllPost from "../AllPosts/AllPost.jsx";
+import Comments from "../Comments/Comments";
 
 const Main = () => {
   return (
@@ -11,6 +12,7 @@ const Main = () => {
       <Routes>
         <Route path="/" element={<AllPost />} />
         <Route path="/usersinglepage/:id" element={<UserSinglePage />} />
+        <Route path="/posts/comments/:postId" element={<Comments />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>

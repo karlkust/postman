@@ -119,6 +119,15 @@ class Api {
             }
         }).then(responseHandler);
     }
+
+    getCommentId(id) {
+        return fetch(`${this.path}/posts/comments/${id}`, {
+            method: 'get',
+            headers: {
+                authorization: `Bearer ${this.token}`
+            }
+        }).then(responseHandler);
+    }
 }
 
 
