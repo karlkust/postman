@@ -16,12 +16,12 @@ const UserSinglePage = () => {
     });
   }, [id]);
 
-  // const handler = (e) => {
+  // const handlerAva = (e) => {
   //   e.preventDefault();
   //   api.editAvatar({ avatar: editAva }).then((ans) => {
   //     console.log(ans);
   //     alert(`Аватар изменён!`);
-  //     navigation("/usersinglepage/:id");
+  //     navigation(`/usersinglepage/${id}`);
   //   });
   // };
 
@@ -29,15 +29,15 @@ const UserSinglePage = () => {
   //   api.editAvatar({ avatar: editAva }).then((data) => {
   //     patchEditAva(data);
   //   });
-  // }, []);
+  // });
 
   return (
     <div className="user-container">
       <div className="card">
         <img src={userInfo.avatar} className="card-img-top" alt="Ваш аватар" />
-        {/* <form onSubmit={handler}>
+        {/* <form onSubmit={handlerAva}>
           <input
-            type="url"
+            type="text"
             placeholder="avatar"
             name="avatar"
             className="in-reg"
@@ -45,11 +45,13 @@ const UserSinglePage = () => {
             required
             onInput={(e) => patchEditAva(e.target.value)}
           />
-          <Button text="Изменить аватар" />
         </form> */}
+        <button className="submit" type="submit">
+          Изменить аватар
+        </button>
 
         <div className="card-body">
-          <h5 className="card-title">{userInfo.name}</h5>
+          <h2 className="card-title">{userInfo.name}</h2>
           <p className="card-text">{userInfo.about}</p>
         </div>
       </div>

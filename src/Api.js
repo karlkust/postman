@@ -102,8 +102,8 @@ class Api {
     }
 
     editAvatar(avatar) {
-        return fetch(`${this.path}/me/avatar`, {
-            method: 'patch',
+        return fetch(`${this.path}/users/me/avatar`, {
+            method: 'PATCH',
             headers: {
                 authorization: `Bearer ${this.token}`,
             },
