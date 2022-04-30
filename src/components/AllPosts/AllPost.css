@@ -75,6 +75,10 @@
 	box-shadow: 0 0 5px 0 #0006;
 }
 
+.like-langth{
+	padding: 5px;
+}
+
 .likes:hover {
 	background: url('/public/img/paperCard.jpg');
 	background-size: cover;

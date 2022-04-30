@@ -10,7 +10,7 @@ const Main = () => {
     <main>
       <Routes>
         <Route path="/" element={<AllPost />} />
-        <Route path="/usersinglepage" element={<UserSinglePage />} />
+        <Route path="/usersinglepage/:id" element={<UserSinglePage />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>

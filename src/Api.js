@@ -92,13 +92,32 @@ class Api {
         }).then(responseHandler)
     }
 
-    getPersonalCard() {
-        return fetch(`${this.path}/users/:userId`, {
+    getPersonalCard(id) {
+        return fetch(`${this.path}/users/${id}`, {
             method: 'get',
             headers: {
                 authorization: `Bearer ${this.token}`,
             },
         }).then(responseHandler)
+    }
+
+    editAvatar(avatar) {
+        return fetch(`${this.path}/me/avatar`, {
+            method: 'patch',
+            headers: {
+                authorization: `Bearer ${this.token}`,
+            },
+            body: JSON.stringify(avatar)
+        }).then(responseHandler)
+    }
+
+    addLike() {
+        return fetch(`${this.path}/posts/likes/:postId`, {
+            method: 'put',
+            headers: {
+                authorization: `Bearer ${this.token}`
+            }
+        }).then(responseHandler);
     }
 }
 

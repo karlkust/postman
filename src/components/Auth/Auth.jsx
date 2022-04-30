@@ -22,7 +22,7 @@ const Auth = ({ login }) => {
           setUser(ans.data._id);
           setToken(ans.token);
         }
-        // alert(`Привет, ${ans.data.name}`);
+        alert(`Привет, ${ans.data.name}`);
         navigation("/");
       });
     } else {

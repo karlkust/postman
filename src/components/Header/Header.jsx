@@ -9,11 +9,11 @@ const Header = () => {
   return (
     <div className="header">
       <Link to={"/"}>
-        <h1 className="name">Ten O'Clock Postman</h1>
+        <h1 className="name">Ten O'Clock POSTman</h1>
       </Link>
 
       <nav>
-        <Link to={"/usersinglepage"}>
+        <Link to={`/usersinglepage/${user}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="46"
