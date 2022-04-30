@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-// import { Route, Routes } from "react-router-dom";
+import React from "react";
 import "./CreatePostModal.css";
 import AllPost from "../AllPosts/AllPost";
-import { UserCtx } from "../Context/UserContext";
+// import { UserCtx } from "../Context/UserContext";
 import api from "../../Api";
+
 const CreatePostModal = () => {
-  const { setUser, setToken } = useContext(UserCtx);
+  // const { setUser, setToken } = useContext(UserCtx);
   let requests = {
     addOnePost: "https://api.react-learning.ru/posts",
   };
@@ -50,14 +50,7 @@ const CreatePostModal = () => {
         }
       });
   }
-
-  // function doAfterAdd(obj, form) {
-  //   block.innerHTML += setCard(obj);
-  //   form.reset();
-  // }
-
-  // let form = document.forms.addPost;
-
+  // const navigate = useNavigate();
   const sentForm = function (e) {
     e.preventDefault();
     let form = e.target;
@@ -75,6 +68,7 @@ const CreatePostModal = () => {
       }
     }
     sendPost(body, form);
+    // navigate("/");
   };
 
   return (

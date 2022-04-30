@@ -7,7 +7,6 @@ import CreatePostModal from './components/CreatePostModal/CreatePostModal';
 import { UserCtx } from './components/Context/UserContext';
 import Main from './components/Main/Main';
 
-
 function App() {
 
   const [user, setUser] = useState(localStorage.getItem("user") || "");
@@ -22,12 +21,14 @@ function App() {
         setToken(data);
         localStorage.setItem("token", data);
     }
+
   return (
     <>
 
     <UserCtx.Provider value={{token: token, user: user, setToken: tokenHandler, setUser: userHandler }}>
       <div className='container'>
         <Header />
+
         <CreatePostModal />
         <Main />
         <Footer />

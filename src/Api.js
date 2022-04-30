@@ -93,11 +93,10 @@ class Api {
     }
 
     getPersonalCard() {
-        return fetch(`${this.path}/users/me`, {
+        return fetch(`${this.path}/users/:userId`, {
             method: 'get',
             headers: {
-                authorization: `Bearer ${this.token}`,  
-                "Content-Type": "application/json"
+                authorization: `Bearer ${this.token}`,
             },
         }).then(responseHandler)
     }
