@@ -43,14 +43,14 @@ class Api {
         }).then(responseHandler);
     }
     
-    getAllComments() {
-        return fetch(`${this.path}/posts/comments/`, {
-            method: 'GET',
-            headers: {
-                authorization: `Bearer ${this.token}`
-            }
-        }).then(responseHandler);
-    }
+    // getAllComments() {
+    //     return fetch(`${this.path}/posts/comments/`, {
+    //         method: 'GET',
+    //         headers: {
+    //             authorization: `Bearer ${this.token}`
+    //         }
+    //     }).then(responseHandler);
+    // }
 
     signup(body) {
         return fetch(`${this.path}/signup`, {
@@ -127,6 +127,21 @@ class Api {
                 authorization: `Bearer ${this.token}`
             }
         }).then(responseHandler);
+    }
+
+    editProfile() {
+        return fetch(`${this.path}/posts/users/me`, {
+            method: 'PATCH',
+            headers: {
+              authorization: '',
+              'Content-Type': `Bearer ${this.token}`
+            },
+            body: JSON.stringify({
+              name: '',
+              about: ''
+            })
+          });
+          
     }
 }
 

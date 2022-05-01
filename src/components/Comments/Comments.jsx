@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import api from "../../Api";
 import "./Comments.css";
 
 const Comments = () => {
   const [allComments, getAllComments] = useState([]);
-
+  let { id } = useParams();
   useEffect(() => {
-    api.getCommentId().then((data) => {
+    api.getCommentId(id).then((data) => {
       getAllComments(data);
     });
-  }, []);
+  }, [id]);
   // console.log({ allComments });
 
   return (

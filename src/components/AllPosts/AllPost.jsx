@@ -11,7 +11,7 @@ const AllPost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    api.getPosts().then((data) => {
+    api.getPosts(id).then((data) => {
       getPosts(data);
       console.log(data);
     });
